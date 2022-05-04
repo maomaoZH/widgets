@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Widget</title>
+
+    <script type="module" src="/build/widget.esm.js"></script>
+    <link rel="stylesheet" href="/build/widget.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="max-width: 200px">
+      <scale-card to="https://example.com" target="_blank">
+        <div style="margin: -24px">
+          <img style="margin-bottom: -4px; width: 100%" src="https://via.placeholder.com/150" alt="placeholder" />
+          <div style="padding: 24px">A card with a full width image</div>
+        </div>
+      </scale-card>
+    </div>
+  </body>
+</html>
