@@ -6,13 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ScaleCard {
+    interface ScaleWidgetNews {
         /**
-          * (optional) Label of the card
+          * (optional) Label of the news widget
          */
         "label"?: string;
         /**
-          * (optional) Link card rel
+          * (optional) Link news widget rel
          */
         "rel"?: string;
         /**
@@ -20,34 +20,34 @@ export namespace Components {
          */
         "styles"?: string;
         /**
-          * (optional) Link card target
+          * (optional) Link news widget target
          */
         "target"?: string;
         /**
-          * (optional) Link card
+          * (optional) Link to news
          */
         "to"?: string;
     }
 }
 declare global {
-    interface HTMLScaleCardElement extends Components.ScaleCard, HTMLStencilElement {
+    interface HTMLScaleWidgetNewsElement extends Components.ScaleWidgetNews, HTMLStencilElement {
     }
-    var HTMLScaleCardElement: {
-        prototype: HTMLScaleCardElement;
-        new (): HTMLScaleCardElement;
+    var HTMLScaleWidgetNewsElement: {
+        prototype: HTMLScaleWidgetNewsElement;
+        new (): HTMLScaleWidgetNewsElement;
     };
     interface HTMLElementTagNameMap {
-        "scale-card": HTMLScaleCardElement;
+        "scale-widget-news": HTMLScaleWidgetNewsElement;
     }
 }
 declare namespace LocalJSX {
-    interface ScaleCard {
+    interface ScaleWidgetNews {
         /**
-          * (optional) Label of the card
+          * (optional) Label of the news widget
          */
         "label"?: string;
         /**
-          * (optional) Link card rel
+          * (optional) Link news widget rel
          */
         "rel"?: string;
         /**
@@ -55,23 +55,23 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
         /**
-          * (optional) Link card target
+          * (optional) Link news widget target
          */
         "target"?: string;
         /**
-          * (optional) Link card
+          * (optional) Link to news
          */
         "to"?: string;
     }
     interface IntrinsicElements {
-        "scale-card": ScaleCard;
+        "scale-widget-news": ScaleWidgetNews;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
+            "scale-widget-news": LocalJSX.ScaleWidgetNews & JSXBase.HTMLAttributes<HTMLScaleWidgetNewsElement>;
         }
     }
 }

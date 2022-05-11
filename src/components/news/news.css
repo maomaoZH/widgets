@@ -1,0 +1,183 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2022 Maomao Meyer-Zhang and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background: var(--telekom-color-background-surface);
+  --transition: all var(--telekom-motion-duration-transition)
+    cubic-bezier(var(--telekom-motion-easing-standard));
+  --radius: var(--telekom-radius-large);
+  --box-shadow: var(--telekom-shadow-raised-standard);
+  --box-shadow-hover: var(--telekom-shadow-raised-hover);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --box-shadow-active: var(--telekom-shadow-raised-pressed);
+
+  --spacing-body: var(--telekom-spacing-unit-x6);
+
+  --spacing-body-slotted: 0;
+  --spacing-body-slotted-interactive: 0;
+  --color: var(--telekom-color-text-and-icon-standard);
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.news--list-wrapper {
+  width: 480px;
+  height: 192px;
+  background: var(--background);
+  transition: var(--transition);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+.news {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  transform-origin: 50% 50% 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.news--interactive {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+.news--interactive:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.news--interactive:focus {
+  box-shadow: var(--telekom-shadow-raised-hover), var(--box-shadow-focus);
+}
+
+.news--interactive:active {
+  border: none;
+  box-shadow: var(--box-shadow-active);
+}
+
+.news--image-container {
+  flex-basis: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+.news--image-container img {
+  object-fit: contain;
+  height: 100%;
+}
+.news--right-container {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news--title {
+  color: var(--telekom-color-text-and-icon-additional);
+  font-size: var(--telekom-typography-font-size-body);
+  margin: 24px 12px 12px;
+  text-transform: uppercase;
+}
+
+.news--subtitle {
+  color: var(--color);
+  font-size: var(--telekom-typography-font-size-caption);
+  margin: 0px 12px;
+  height: 50px;
+  overflow: hidden;
+  flex-basis: 50%;
+}
+
+.news--nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 12px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+}
+.news-prev-arrow,
+.news-next-arrow {
+  margin: 0 6px;
+  cursor: pointer;
+  color: var(--telekom-color-ui-additional-regular);
+}
+.news--indicator-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.news--indicator {
+  height: 12px;
+  width: 12px;
+  background-color: var(--telekom-color-ui-additional-light);
+  border-radius: var(--telekom-radius-circle);
+  margin: 0 6px;
+  cursor: pointer;
+}
+.news--indicator-active {
+  background-color: var(--telekom-color-ui-additional-regular);
+}
+/* .news--interactive .news__body ::slotted(*) {
+  margin: var(--spacing-body-slotted-interactive);
+} */

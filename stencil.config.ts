@@ -7,6 +7,13 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: 'telekom/fonts/TeleNeoWeb',
+          dest: 'build/fonts/TeleNeoWeb',
+          warn: true,
+        },
+      ],
     },
     {
       type: 'dist-custom-elements',
@@ -16,7 +23,14 @@ export const config: Config = {
     },
     {
       type: 'www',
-      serviceWorker: null, // disable service workers
+      serviceWorker: null, // disable service workers,
+      copy: [
+        {
+          src: 'telekom/fonts/TeleNeoWeb',
+          dest: 'build/fonts/TeleNeoWeb',
+          warn: true,
+        },
+      ],
     },
   ],
 };
