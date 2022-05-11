@@ -20,8 +20,6 @@ import newsApi from './api/listing';
   shadow: true,
 })
 export class News {
-  /** (optional) Link to news */
-  @Prop() to?: string = '';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) Label of the news widget */
@@ -41,6 +39,12 @@ export class News {
   async componentWillLoad() {
     const res = await newsApi.getNews();
     this.newsList = res.data['articles'];
+
+    if (!this.intervalId) {
+      this.intervalId = setInterval(() => {
+        this.getNext(this.activeList);
+      }, 4000);
+    }
   }
 
   getPrev(current) {
@@ -63,33 +67,23 @@ export class News {
     this.activeList = index;
   }
 
-  componentDidLoad() {
-    if (!this.intervalId) {
-      this.intervalId = setInterval(() => {
-        this.getNext(this.activeList);
-      }, 3000);
-    }
-  }
-
   disconnectedCallback() {
     clearInterval(this.intervalId);
     this.intervalId = null;
   }
   render() {
     if (this.newsList && this.newsList.length === 0) return null;
-    const Tag = !!this.to ? 'a' : 'div';
 
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class="news--list-wrapper">
           {this.newsList.map((list, index) => (
-            <Tag
+            <a
               class={this.getCssClassMap()}
-              part={classNames('base', !!this.to && 'interactive')}
-              {...(!this.to ? { role: 'group' } : {})}
-              {...(!!this.to ? { href: this.to } : {})}
-              {...(!!this.target ? { target: this.target } : {})}
+              part={classNames('base', 'interactive')}
+              href={list['url']}
+              target="_blank"
               {...(!!this.rel ? { rel: this.rel } : {})}
               {...(!!this.label ? { ['aria-label']: this.label } : {})}
               style={{
@@ -104,7 +98,7 @@ export class News {
                 <h6 class="news--title">{list['source']['name']}</h6>
                 <p class="news--subtitle">{list.description}</p>
               </div>
-            </Tag>
+            </a>
           ))}
           <div class="news--nav-wrapper">
             <div

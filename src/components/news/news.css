@@ -87,6 +87,7 @@
   transform-origin: 50% 50% 0;
   position: absolute;
   opacity: 0;
+  text-decoration: none;
 }
 
 .news--interactive {

@@ -23,10 +23,6 @@ export namespace Components {
           * (optional) Link news widget target
          */
         "target"?: string;
-        /**
-          * (optional) Link to news
-         */
-        "to"?: string;
     }
 }
 declare global {
@@ -58,10 +54,6 @@ declare namespace LocalJSX {
           * (optional) Link news widget target
          */
         "target"?: string;
-        /**
-          * (optional) Link to news
-         */
-        "to"?: string;
     }
     interface IntrinsicElements {
         "scale-widget-news": ScaleWidgetNews;
