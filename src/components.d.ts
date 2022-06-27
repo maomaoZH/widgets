@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ScaleWidgetNews {
         /**
+          * (optional) news widget height, could be px or percentage
+         */
+        "height"?: any;
+        /**
           * (optional) Label of the news widget
          */
         "label"?: string;
@@ -23,6 +27,10 @@ export namespace Components {
           * (optional) Link news widget target
          */
         "target"?: string;
+        /**
+          * (optional) news widget width could be px or percentage
+         */
+        "width"?: any;
     }
 }
 declare global {
@@ -39,6 +47,10 @@ declare global {
 declare namespace LocalJSX {
     interface ScaleWidgetNews {
         /**
+          * (optional) news widget height, could be px or percentage
+         */
+        "height"?: any;
+        /**
           * (optional) Label of the news widget
          */
         "label"?: string;
@@ -54,6 +66,10 @@ declare namespace LocalJSX {
           * (optional) Link news widget target
          */
         "target"?: string;
+        /**
+          * (optional) news widget width could be px or percentage
+         */
+        "width"?: any;
     }
     interface IntrinsicElements {
         "scale-widget-news": ScaleWidgetNews;

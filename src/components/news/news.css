@@ -70,8 +70,6 @@
 }
 
 .news--list-wrapper {
-  width: 480px;
-  height: 192px;
   background: var(--background);
   transition: var(--transition);
   border-radius: var(--radius);

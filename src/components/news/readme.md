@@ -13,7 +13,6 @@
 | `rel`    | `rel`     | (optional) Link news widget rel     | `string` | `''`        |
 | `styles` | `styles`  | (optional) Injected CSS styles      | `string` | `undefined` |
 | `target` | `target`  | (optional) Link news widget target  | `string` | `'_self'`   |
-| `to`     | `to`      | (optional) Link to news             | `string` | `''`        |
 
 
 ----------------------------------------------

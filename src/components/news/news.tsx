@@ -28,6 +28,10 @@ export class News {
   @Prop() target?: string = '_self';
   /** (optional) Link news widget rel */
   @Prop() rel?: string = '';
+  /** (optional) news widget height, could be px or percentage */
+  @Prop() height?: any = '192px';
+  /** (optional) news widget width could be px or percentage */
+  @Prop() width?: any = '420px';
   /** (optional) Injected CSS styles */
 
   /** News list array */
@@ -77,7 +81,10 @@ export class News {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class="news--list-wrapper">
+        <div
+          class="news--list-wrapper"
+          style={{ width: this.width, height: this.height }}
+        >
           {this.newsList.map((list, index) => (
             <a
               class={this.getCssClassMap()}
